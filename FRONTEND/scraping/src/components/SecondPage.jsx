@@ -38,7 +38,7 @@ const SecondPage = () => {
       if (initialQuery) {
         setIsLoading(true);
         try {
-          const res = await fetch("http://192.168.1.8:4000/api/query", {
+          const res = await fetch("https://ai-phone-finder.onrender.com", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ query: initialQuery }),
@@ -95,7 +95,7 @@ const SecondPage = () => {
     setChatHistory((prev) => [...prev, { type: "typing" }]);
 
     try {
-      const res = await fetch("http://192.168.1.8:4000/api/query", {
+      const res = await fetch("https://ai-phone-finder.onrender.com", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ query: inputValue }),
