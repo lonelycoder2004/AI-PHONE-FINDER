@@ -340,7 +340,7 @@ body {
 
 .message-time {
   font-size: 0.7rem;
-  color: var(--text-dark);
+  color: var(--text-light);
   margin-top: 4px;
 }
 

@@ -208,7 +208,7 @@ h1 {
 .phone-display {
   width: 270px;
   height: 560px;
-  background-color: var(--bg-secondary);
+  background-color: var(--shadow-color);
   border-radius: 3rem;
   overflow: hidden;
   position: relative;
@@ -220,7 +220,7 @@ h1 {
 .inner-display {
   width: 100%;
   height: 100%;
-  background-color: var(--bg-primary);
+  background-color: var(--shadow-color);
   padding: 1.5rem 1rem;
   display: flex;
   flex-direction: column;
@@ -427,6 +427,6 @@ h1 {
   }
   
   .trust-label {
-    font-size: 0.75rem;
-  }
+    font-size:0.75rem;
+}
 }

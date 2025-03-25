@@ -16,6 +16,10 @@ app.use(cors(corsOptions));
 
 app.use(express.json()); // JSON Middleware
 
+app.get('/', (req, res) => {
+    res.send('Hello World!')
+})
+
 // API Endpoint to handle user query
 app.post('/api/query', (req, res) => {
     const { query } = req.body;

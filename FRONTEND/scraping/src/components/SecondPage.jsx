@@ -27,6 +27,21 @@ const SecondPage = () => {
   };
 
   useEffect(() => {
+    // Disable back button functionality
+    const handleBackButton = (e) => {
+      e.preventDefault();
+      window.history.forward();
+    };
+
+    window.history.pushState(null, null, window.location.pathname);
+    window.addEventListener('popstate', handleBackButton);
+
+    return () => {
+      window.removeEventListener('popstate', handleBackButton);
+    };
+  }, []);
+
+  useEffect(() => {
     const hasVisited = sessionStorage.getItem("visited");
     if (hasVisited || hasFetchedInitialQuery.current) return;
 
@@ -38,7 +53,7 @@ const SecondPage = () => {
       if (initialQuery) {
         setIsLoading(true);
         try {
-          const res = await fetch("https://ai-phone-finder.onrender.com", {
+          const res = await fetch("http://localhost:4000/api/query", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ query: initialQuery }),
@@ -95,7 +110,7 @@ const SecondPage = () => {
     setChatHistory((prev) => [...prev, { type: "typing" }]);
 
     try {
-      const res = await fetch("https://ai-phone-finder.onrender.com", {
+      const res = await fetch("http://localhost:4000/api/query", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ query: inputValue }),

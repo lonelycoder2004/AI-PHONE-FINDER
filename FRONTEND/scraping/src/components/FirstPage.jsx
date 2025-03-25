@@ -1,22 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import "./FirstPage.css";
 
 function FirstPage() {
   const [query, setQuery] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [darkMode, setDarkMode] = useState(() => {
-    const savedTheme = localStorage.getItem("theme");
-    return savedTheme ? savedTheme === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
-  });
   const navigate = useNavigate();
 
-  useEffect(() => {
-    document.documentElement.setAttribute("data-theme", darkMode ? "dark" : "light");
-    localStorage.setItem("theme", darkMode ? "dark" : "light");
-  }, [darkMode]);
+ 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -34,7 +27,7 @@ function FirstPage() {
      
       <div className="content-area">
         <div className="left-column">
-          <h1>AI Phone Finder</h1>
+          <h1>AI Phone Advisor</h1>
           <p className="tagline">Find your perfect smartphone match in seconds</p>
 
           <form onSubmit={handleSubmit} className="search-form">
