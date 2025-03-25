@@ -1,2 +1,0 @@
-pymongo
-git+https://github.com/togethercomputer/together-python.git
