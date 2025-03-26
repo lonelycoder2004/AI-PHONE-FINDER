@@ -87,7 +87,7 @@ def llm_search(query: str, phones: list):
         response = llm_client.chat.completions.create(
             model="deepseek-ai/DeepSeek-R1-Distill-Llama-70B-free",  # Updated model name
             messages=[{"role": "user", "content": prompt}],
-            temperature=0.9,
+            temperature=0.5,
             max_tokens=4096  # Increase max_tokens if needed
         )
         llm_output = response.choices[0].message.content

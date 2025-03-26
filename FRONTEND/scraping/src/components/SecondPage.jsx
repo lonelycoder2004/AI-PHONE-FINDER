@@ -12,6 +12,22 @@ const SecondPage = () => {
   const chatMessagesRef = useRef(null);
   const inputRef = useRef(null);
   const hasFetchedInitialQuery = useRef(false);
+  const [isOnline, setIsOnline] = useState(navigator.onLine);
+
+  useEffect(() => {
+    const handleOnline = () => setIsOnline(true);
+    const handleOffline = () => setIsOnline(false);
+
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline', handleOffline);
+
+    return () => {
+      window.removeEventListener('online', handleOnline);
+      window.removeEventListener('offline', handleOffline);
+    };
+  }, []);
+
+  
 
   const cleanResponse = (text) => {
     // Remove IDs
@@ -144,6 +160,8 @@ const SecondPage = () => {
     }
   };
 
+  
+
   const handleKeyPress = (e) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault(); // Prevent default behavior (e.g., new line)
@@ -167,8 +185,8 @@ const SecondPage = () => {
             <h1>PhoneAdvisor AI</h1>
           </div>
           <div className="user-status">
-            <div className="status-indicator online"></div>
-            <span>Online</span>
+            <div className={`status-indicator ${isOnline ? 'online' : 'offline'}`}></div>
+            <span>{isOnline ? 'Online' : 'Offline'}</span>
           </div>
         </div>
       </header>

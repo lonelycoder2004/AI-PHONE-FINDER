@@ -98,6 +98,11 @@ body {
   box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
 }
 
+.status-indicator.offline {
+  background-color: #f44336;
+  box-shadow: 0 0 10px rgba(244, 67, 54, 0.5);
+}
+
 /* Chat messages container */
 .chat-messages-container {
   flex: 1;

@@ -55,7 +55,7 @@ function FirstPage() {
 
           <div className="suggestion-chips">
             <div className="chip" onClick={() => setQuery("Best camera phone under 20K")}>Best camera phone under 20K</div>
-            <div className="chip" onClick={() => setQuery("Best battery phone under 40K")}>Best gaming phone under 40K</div>
+            <div className="chip" onClick={() => setQuery("Best phones from samsung")}>Best phones from samsung</div>
             <div className="chip" onClick={() => setQuery("Best allrounder phone above 50K")}>Best allrounder phone above 50K</div>
           </div>
         </div>
