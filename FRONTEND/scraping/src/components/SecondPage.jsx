@@ -69,7 +69,7 @@ const SecondPage = () => {
       if (initialQuery) {
         setIsLoading(true);
         try {
-          const res = await fetch("http://localhost:4000/api/query", {
+          const res = await fetch("http://13.201.81.252:4000/api/query", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ query: initialQuery }),
@@ -126,7 +126,7 @@ const SecondPage = () => {
     setChatHistory((prev) => [...prev, { type: "typing" }]);
 
     try {
-      const res = await fetch("http://localhost:4000/api/query", {
+      const res = await fetch("http://13.201.81.252:4000/api/query", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ query: inputValue }),
