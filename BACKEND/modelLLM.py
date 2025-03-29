@@ -48,6 +48,7 @@ def llm_search(query: str, phones: list):
         - Identify key aspects of the query, such as budget, brand preference, use case (e.g., gaming, camera, battery life), or specific features (e.g., processor, RAM, storage).
         - If the user mentions a budget (e.g., "under ₹20,000","under 20k,between any budget,below ,above,best..etc"), prioritize phones within that range.
         - If the user mentions a brand, prioritize phones from that brand. If the brand is unavailable, suggest alternatives and clearly state that they are not the requested brand.
+        - If the need is not about phone or appreciating you then reply accordingly.
 
         2. Prioritize Based on Use Case:
         - Gaming Phones: Prioritize phones with powerful processors (e.g., Snapdragon 8 series, Dimensity high-end chips) and good cooling systems. Look for high refresh rate displays and ample RAM.
