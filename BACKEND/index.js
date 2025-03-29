@@ -31,7 +31,7 @@ app.post('/api/query', (req, res) => {
     console.log(`Received query: ${query}`);
 
     // Spawn Python process with user query
-    const pythonProcess = spawn('python', ['modelLLM.py', query]);
+    const pythonProcess = spawn('python3', ['modelLLM.py', query]);
 
     let result = '';
     
